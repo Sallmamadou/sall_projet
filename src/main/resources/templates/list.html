@@ -1,0 +1,32 @@
+html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Informations personnelles</title>
+</head>
+<body>
+    <h1>Informations personnelles</h1>
+    <a th:href="@{/personal-info/add}">Ajouter une information</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="info : ${infos}">
+                <td th:text="${info.lastName}"></td>
+                <td th:text="${info.firstName}"></td>
+                <td th:text="${info.email}"></td>
+                <td>
+                    <a th:href="@{/personal-info/edit/{id}(id=${info.id})}">Modifier</a>
+                    <a th:href="@{/personal-info/delete/{id}(id=${info.id})}">Supprimer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
