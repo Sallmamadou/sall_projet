@@ -16,8 +16,8 @@ public class utilisateur {
     private String nom;
     private String address;
     private String email;
-    private String photo;  // Chemin vers l'image
-    private LocalDate datenais;
+    private String photo;  
+    private LocalDate datenaissance;
     private String phone;
     private String genre;
     private String nationalité;
